@@ -1,0 +1,15 @@
+.card-view {
+    clear: both;
+}
+
+.card-view .title {
+    display: block;
+    width: 30%;
+    float: left;
+}
+
+.card-view .value {
+    display: block;
+    width: 70%;
+    float: right;
+}

@@ -1,0 +1,109 @@
+
+/* ----------排版與顏色---------- */
+
+
+.SystemTitle{
+/* 	background-color: #6bc9fc; */
+/* 	background:-webkit-linear-gradient(Top,#6bc9fc 0%,#ffffff 70%); */
+	text-align:center;
+	font-size:30px;
+	color:#ffc526;
+	border-style:outset;
+	border: none;
+	
+}
+
+.toolBar {
+	background: #bec2c5;
+	padding: 5px;
+}
+
+.toolBar input {
+	width: 60px;
+	height: 30px;
+	border-style: outset;
+}
+
+.span-btn-right {
+	float: right;
+}
+
+/* ----------下拉式主選單---------- */
+
+ul { /* 取消ul預設的內縮及樣式 */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.drop-down-menu {
+	border: #ccc 1px solid;
+	display: inline-block;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 20px;
+	border-style: outset;
+}
+
+ul.drop-down-menu li {
+	position: relative;
+	white-space: nowrap;
+	border-right: #ccc 1px solid;
+}
+
+ul.drop-down-menu>li:last-child {
+	border-right: none;
+}
+
+ul.drop-down-menu>li {
+	float: left; /* 只有第一層是靠左對齊*/
+}
+
+ul.drop-down-menu a {
+	background-color: #f3f3f3;
+	color: #333;
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	line-height: 20px;
+}
+
+ul.drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
+	background-color: #ff8040;
+	color: #fff;
+}
+
+ul.drop-down-menu li:hover>a { /* 滑鼠移入次選單上層按鈕保持變色*/
+	background-color: #ff8040;
+	color: #fff;
+}
+
+ul.drop-down-menu ul {
+	border: #ccc 1px solid;
+	position: absolute;
+	z-index: 99;
+	left: 1em;
+	top: 100%;
+	min-width: 180px;
+}
+
+ul.drop-down-menu ul li {
+	border-bottom: #ccc 1px solid;
+}
+
+ul.drop-down-menu ul li:last-child {
+	border-bottom: none;
+}
+
+ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+	z-index: 999;
+	top: 10px;
+	left: 90%;
+}
+
+ul.drop-down-menu ul { /*隱藏次選單*/
+	display: none;
+}
+
+ul.drop-down-menu li:hover>ul { /* 滑鼠滑入展開次選單*/
+	display: block;
+}

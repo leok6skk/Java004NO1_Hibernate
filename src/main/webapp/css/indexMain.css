@@ -1,0 +1,52 @@
+
+body {
+  background-color: #444444;
+  font-family: Tahoma;
+}
+
+
+footer {
+	height: 30px;
+	background-color: #ffffff;
+	border-left: 2px solid #999;
+	border-right: 2px solid #999;
+	border-bottom: 2px solid #999;
+}
+
+table {
+/* 	border:solid 1px;  */
+	width: 80%;	
+	margin-left:20px;
+	text-align:center;
+}
+
+
+#showDAOJsp {
+	margin-top:1px;
+	border-radius:15px;
+	background-color: #d6eaf3;
+	border: 10px solid #ffffb5;
+}
+
+#showResult {
+	margin-top:4px;
+	padding-top:10px;
+	height: 500px;
+	overflow:auto;
+	background-color:#cfd2cd;
+	border-left: 2px solid #999;
+	border-right: 2px solid #999;
+	border-bottom: 2px solid #999;
+}
+
+tr:nth-child(odd){
+	background:#e7e7e7;
+}
+tr:nth-child(even){
+	background:#a4cfdf;
+}
+td{
+	font-family: Tahoma;
+	font-size: 20px;
+	border: solid 1px #000000;
+}
