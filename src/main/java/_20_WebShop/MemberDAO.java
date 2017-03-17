@@ -1,4 +1,4 @@
-﻿package _14_Member;
+﻿package _20_WebShop;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -93,7 +93,7 @@ public class MemberDAO {
 	synchronized public String insert(MemberBean mem){
 	
 		String sql = "INSERT INTO Member "
-				+ " VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
 		
 		try(
 			Connection con = ds.getConnection();
@@ -101,14 +101,25 @@ public class MemberDAO {
 		
 			pstmt.setString(1, mem.getM_Username());
 			pstmt.setString(2, mem.getM_Password());
-			pstmt.setString(3, mem.getM_Name());	
-			pstmt.setString(4, mem.getM_Cellphone());
-			pstmt.setString(5, mem.getM_Birthday());
-			pstmt.setString(6, mem.getM_Insertdate());
-			pstmt.setString(7, mem.getM_Updatedate());
-			pstmt.setInt(8, mem.getM_Level());
-			pstmt.setInt(9, mem.getM_BonusPoints());
-			pstmt.setInt(10, mem.getM_Total());
+			pstmt.setString(3, mem.getM_ID());
+			pstmt.setString(4, mem.getM_Name());
+			pstmt.setString(5, mem.getM_Nick());
+			pstmt.setString(6, mem.getM_Sex());
+			pstmt.setString(7, mem.getM_Birthday());		
+			pstmt.setString(8, mem.getM_EMail());
+			pstmt.setString(9, mem.getM_Phone());
+			pstmt.setString(10, mem.getM_Cellphone());
+			pstmt.setString(11, mem.getM_Address());
+			pstmt.setString(12, mem.getM_Line());
+			pstmt.setString(13, mem.getM_FaceBook());
+			pstmt.setString(14, mem.getM_IdentityCard());
+			pstmt.setString(15, mem.getM_Invoice());
+			pstmt.setString(16, mem.getM_UniformNumber());
+			pstmt.setString(17, mem.getM_Insertdate());
+			pstmt.setString(18, mem.getM_Updatedate());
+			pstmt.setInt(19, mem.getM_Level());
+			pstmt.setInt(20, mem.getM_BonusPoints());
+			pstmt.setInt(21, mem.getM_Total());
 									
 			pstmt.executeUpdate();
 			
@@ -158,16 +169,22 @@ public class MemberDAO {
 			Connection con = ds.getConnection();
 			PreparedStatement pstmt	= con.prepareStatement(sql);){				
 		
-			pstmt.setString(1, mem.getM_Username());
-			pstmt.setString(2, mem.getM_Password());
-			pstmt.setString(3, mem.getM_Name());	
-			pstmt.setString(4, mem.getM_Cellphone());
-			pstmt.setString(5, mem.getM_Birthday());
-			pstmt.setString(6, mem.getM_Insertdate());
-			pstmt.setString(7, mem.getM_Updatedate());
-			pstmt.setInt(8, mem.getM_Level());
-			pstmt.setInt(9, mem.getM_BonusPoints());
-			pstmt.setInt(10, mem.getM_Total());
+			pstmt.setString(1, mem.getM_ID());
+			pstmt.setString(2, mem.getM_Username());
+			pstmt.setString(3, mem.getM_Password());
+			pstmt.setString(4, mem.getM_Name());
+			pstmt.setString(5, mem.getM_Nick());
+			pstmt.setString(6, mem.getM_Sex());
+			pstmt.setString(7, mem.getM_Birthday());		
+			pstmt.setString(8, mem.getM_EMail());
+			pstmt.setString(9, mem.getM_Phone());
+			pstmt.setString(10, mem.getM_Cellphone());
+			pstmt.setString(11, mem.getM_Address());
+			pstmt.setString(12, mem.getM_Line());
+			pstmt.setString(13, mem.getM_FaceBook());
+			pstmt.setString(14, mem.getM_IdentityCard());
+			pstmt.setString(15, mem.getM_Invoice());
+			pstmt.setString(16, mem.getM_UniformNumber());
 					
 			pstmt.executeUpdate();
 			
@@ -200,15 +217,26 @@ public class MemberDAO {
 					MemberBean pb = new MemberBean();
 					
 					pb.setM_Username(rs.getString(1));
-					pb.setM_Password(rs.getString(2));			
-					pb.setM_Name(rs.getString(3));	
-					pb.setM_Cellphone(rs.getString(4));
-					pb.setM_Birthday(rs.getString(5));
-					pb.setM_Insertdate(rs.getString(6));
-					pb.setM_Updatedate(rs.getString(7));
-					pb.setM_Level(rs.getInt(8));
-					pb.setM_BonusPoints(rs.getInt(9));
-					pb.setM_Total(rs.getInt(10));
+					pb.setM_Password(rs.getString(2));
+					pb.setM_ID(rs.getString(3));
+					pb.setM_Name(rs.getString(4));
+					pb.setM_Nick(rs.getString(5));
+					pb.setM_Sex(rs.getString(6));
+					pb.setM_Birthday(rs.getString(7));
+					pb.setM_EMail(rs.getString(8));
+					pb.setM_Phone(rs.getString(9));
+					pb.setM_Cellphone(rs.getString(10));
+					pb.setM_Address(rs.getString(11));
+					pb.setM_Line(rs.getString(12));
+					pb.setM_FaceBook(rs.getString(13));
+					pb.setM_IdentityCard(rs.getString(14));
+					pb.setM_Invoice(rs.getString(15));
+					pb.setM_UniformNumber(rs.getString(16));
+					pb.setM_Insertdate(rs.getString(17));
+					pb.setM_Updatedate(rs.getString(18));
+					pb.setM_Level(rs.getInt(19));
+					pb.setM_BonusPoints(rs.getInt(20));
+					pb.setM_Total(rs.getInt(21));
 					
 					coll.add(pb);					
 				}
@@ -237,15 +265,26 @@ public class MemberDAO {
 					MemberBean pb = new MemberBean();
 					
 					pb.setM_Username(rs.getString(1));
-					pb.setM_Password(rs.getString(2));			
-					pb.setM_Name(rs.getString(3));	
-					pb.setM_Cellphone(rs.getString(4));
-					pb.setM_Birthday(rs.getString(5));
-					pb.setM_Insertdate(rs.getString(6));
-					pb.setM_Updatedate(rs.getString(7));
-					pb.setM_Level(rs.getInt(8));
-					pb.setM_BonusPoints(rs.getInt(9));
-					pb.setM_Total(rs.getInt(10));
+					pb.setM_Password(rs.getString(2));
+					pb.setM_ID(rs.getString(3));
+					pb.setM_Name(rs.getString(4));
+					pb.setM_Nick(rs.getString(5));
+					pb.setM_Sex(rs.getString(6));
+					pb.setM_Birthday(rs.getString(7));
+					pb.setM_EMail(rs.getString(8));
+					pb.setM_Phone(rs.getString(9));
+					pb.setM_Cellphone(rs.getString(10));
+					pb.setM_Address(rs.getString(11));
+					pb.setM_Line(rs.getString(12));
+					pb.setM_FaceBook(rs.getString(13));
+					pb.setM_IdentityCard(rs.getString(14));
+					pb.setM_Invoice(rs.getString(15));
+					pb.setM_UniformNumber(rs.getString(16));
+					pb.setM_Insertdate(rs.getString(17));
+					pb.setM_Updatedate(rs.getString(18));
+					pb.setM_Level(rs.getInt(19));
+					pb.setM_BonusPoints(rs.getInt(20));
+					pb.setM_Total(rs.getInt(21));
 
 					coll.add(pb);
 				}
@@ -279,15 +318,26 @@ public class MemberDAO {
 					MemberBean pb = new MemberBean();
 					
 					pb.setM_Username(rs.getString(1));
-					pb.setM_Password(rs.getString(2));			
-					pb.setM_Name(rs.getString(3));	
-					pb.setM_Cellphone(rs.getString(4));
-					pb.setM_Birthday(rs.getString(5));
-					pb.setM_Insertdate(rs.getString(6));
-					pb.setM_Updatedate(rs.getString(7));
-					pb.setM_Level(rs.getInt(8));
-					pb.setM_BonusPoints(rs.getInt(9));
-					pb.setM_Total(rs.getInt(10));
+					pb.setM_Password(rs.getString(2));
+					pb.setM_ID(rs.getString(3));
+					pb.setM_Name(rs.getString(4));
+					pb.setM_Nick(rs.getString(5));
+					pb.setM_Sex(rs.getString(6));
+					pb.setM_Birthday(rs.getString(7));
+					pb.setM_EMail(rs.getString(8));
+					pb.setM_Phone(rs.getString(9));
+					pb.setM_Cellphone(rs.getString(10));
+					pb.setM_Address(rs.getString(11));
+					pb.setM_Line(rs.getString(12));
+					pb.setM_FaceBook(rs.getString(13));
+					pb.setM_IdentityCard(rs.getString(14));
+					pb.setM_Invoice(rs.getString(15));
+					pb.setM_UniformNumber(rs.getString(16));
+					pb.setM_Insertdate(rs.getString(17));
+					pb.setM_Updatedate(rs.getString(18));
+					pb.setM_Level(rs.getInt(19));
+					pb.setM_BonusPoints(rs.getInt(20));
+					pb.setM_Total(rs.getInt(21));
 
 					coll.add(pb);					
 				}
@@ -354,15 +404,26 @@ public Boolean ifExist(String Username){
 					MemberBean pb = new MemberBean();
 					
 					pb.setM_Username(rs.getString(1));
-					pb.setM_Password(rs.getString(2));			
-					pb.setM_Name(rs.getString(3));	
-					pb.setM_Cellphone(rs.getString(4));
-					pb.setM_Birthday(rs.getString(5));
-					pb.setM_Insertdate(rs.getString(6));
-					pb.setM_Updatedate(rs.getString(7));
-					pb.setM_Level(rs.getInt(8));
-					pb.setM_BonusPoints(rs.getInt(9));
-					pb.setM_Total(rs.getInt(10));
+					pb.setM_Password(rs.getString(2));
+					pb.setM_ID(rs.getString(3));
+					pb.setM_Name(rs.getString(4));
+					pb.setM_Nick(rs.getString(5));
+					pb.setM_Sex(rs.getString(6));
+					pb.setM_Birthday(rs.getString(7));
+					pb.setM_EMail(rs.getString(8));
+					pb.setM_Phone(rs.getString(9));
+					pb.setM_Cellphone(rs.getString(10));
+					pb.setM_Address(rs.getString(11));
+					pb.setM_Line(rs.getString(12));
+					pb.setM_FaceBook(rs.getString(13));
+					pb.setM_IdentityCard(rs.getString(14));
+					pb.setM_Invoice(rs.getString(15));
+					pb.setM_UniformNumber(rs.getString(16));
+					pb.setM_Insertdate(rs.getString(17));
+					pb.setM_Updatedate(rs.getString(18));
+					pb.setM_Level(rs.getInt(19));
+					pb.setM_BonusPoints(rs.getInt(20));
+					pb.setM_Total(rs.getInt(21));
 
 					coll.add(pb);
 				}

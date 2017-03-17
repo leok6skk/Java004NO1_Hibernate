@@ -94,8 +94,7 @@ public class Update extends HttpServlet {
 			} else {
 				try {
 
-					MemberBean mem = new MemberBean(id, username, password, name, nick, sex, birthday, eMail, phone,
-							cellPhone, address, line, faceBook, identityCard, invoice, uniformNumber, insertDate,
+					MemberBean mem = new MemberBean(username, password, name, cellPhone, birthday, insertDate,
 							insertDate, 0, 0, 0);
 					error.setDML_Result(new MemberDAO().insert(mem));
 
