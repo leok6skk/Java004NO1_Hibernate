@@ -61,7 +61,7 @@
 
 			<TR>
 				<TD colspan="1">
-					<button onclick="location.href='http://localhost:8080/Java004NO1/_14_Member/IndexMember.jsp'">						
+					<button onclick="IndexMember.jsp">						
 						<font color="red">
 						取消新增
 						</font>

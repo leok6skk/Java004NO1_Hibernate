@@ -172,9 +172,8 @@
 										<div class="form-group">
 											<label for="Password" class="col-sm-3 control-label">會員密碼</label>
 											<div class="col-sm-8">
-												<input type="password" id="Password"
-													placeholder="6～20個數字和英文組成的字元" class="form-control required atoz_number"
-													name="Password">
+												<input type="password" id="Password" name="Password"
+													placeholder="6～20個數字和英文組成的字元" class="form-control required atoz_number">
 												
 											</div>
 											
@@ -182,8 +181,8 @@
 										<div class="form-group">
 											<label for="Password2" class="col-sm-3 control-label">密碼確認</label>
 											<div class="col-sm-8">
-												<input type="password" id="Password2" placeholder="再輸入一次密碼"
-													class="form-control required atoz_number" name="Password2">
+												<input type="password" id="Password2" name="Password2" placeholder="再輸入一次密碼"
+													class="form-control required atoz_number equalTo:'#Password'">
 											
 
 											</div>
@@ -248,7 +247,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.validate.js"></script>
 	<script src="js/jquery.ajaxupload.js"></script>
-	<script src="js/login_and_register.js?v016"></script>
+	<script src="js/login_and_register.js?v018"></script>
 </body>
 
 </html>

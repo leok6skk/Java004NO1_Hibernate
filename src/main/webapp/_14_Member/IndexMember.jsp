@@ -46,7 +46,7 @@
 
 					</button>
 					<button
-						onclick="location.href='http://localhost:8080/Java004NO1/_14_Member/IndexMember.jsp'">
+						onclick="IndexMember.jsp'">
 
 						<br>首頁
 
@@ -68,7 +68,7 @@
 					</button>
 
 				</div>
-				<Form Action="Javascript:%200" id="formSelect">
+				<Form id="formSelect">
 
 					輸入帳號查詢: <input type="text" name="Username" id="M_Username" value=""
 						size="20" placeholder="不輸入搜尋全部" />
@@ -80,10 +80,8 @@
 					<input type="text" name="pageNo" id="pageNo" value="1" />
 
 
-					<button id="buttonsearch"
-						onclick="getQueryData('M_Username','Select','resultIndex','sqlResult','M_Username');">
-						<img src="../image/search.png">
-					</button>
+					<button type="submit" id="buttonsearch" ><img src="../image/search.png"></button>
+				
 
 					<div id="sqlResult"></div>
 
@@ -124,11 +122,12 @@
 
 
 	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/jquery.form.js"></script>
 	<script src="../asset/js/bootstrap.min.js"></script>
 	
 	<script src="../js/member/insert.js?v0001"></script>
 	<script src="../js/member/delete.js?v014"></script>
-	<script src="../js/member/select.js?v014"></script>
+	<script src="../js/member/select.js?v023"></script>
 	<script src="../js/member/update.js?v014"></script>
 	<script src="../js/member/member.js?v014"></script>
 

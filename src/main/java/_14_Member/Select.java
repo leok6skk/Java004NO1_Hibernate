@@ -72,7 +72,7 @@ public class Select extends HttpServlet {
 			}
 			
 			toJson = new Gson().toJson(coll);
-			//System.out.println(toJson);
+			System.out.println(toJson);
 			out.println(toJson);
 		}
 

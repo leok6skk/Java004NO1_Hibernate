@@ -141,8 +141,7 @@ $(document).ready(function() {
 			},
 			Password2:{
 				minlength : 6,
-				maxlength : 20,
-				equalTo : "#Password"
+				maxlength : 20
 			},
 			Name:{
 				maxlength : 20
