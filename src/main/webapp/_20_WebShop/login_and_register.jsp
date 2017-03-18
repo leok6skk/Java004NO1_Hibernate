@@ -247,7 +247,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.validate.js"></script>
 	<script src="js/jquery.ajaxupload.js"></script>
-	<script src="js/login_and_register.js?v018"></script>
+	<script src="js/login_and_register.js?v019"></script>
 </body>
 
 </html>

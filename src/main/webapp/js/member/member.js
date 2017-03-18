@@ -1,7 +1,7 @@
 function indexdofirst(){
 
 //	getQueryDataLimit('LimitSelect','resultIndex','M_ID');
-	getQueryData('M_Username','Select','resultIndex','result','M_Username');
+//	getQueryData('M_Username','Select','resultIndex','result','M_Username');
 	
 	document.getElementById('buttonremark').onclick = function(){
 		alert("remark");

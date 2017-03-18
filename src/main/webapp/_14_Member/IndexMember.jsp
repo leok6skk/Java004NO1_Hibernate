@@ -18,7 +18,7 @@
 <title>會員管理首頁</title>
 </head>
 <body>
-	<!-- 	<h3>highlight test</h3> -->
+
 	<header class="container-fuild">
 
 		<div class="row">
@@ -61,8 +61,7 @@
 						<img src='../image/update.png'><br>修改
 
 					</button>
-					<button
-						onclick="setDeleteData('Delete','sqlResult');" id='buttondelete'>
+					<button id='buttondelete'>
 						<img src='../image/delete.png'><br>刪除
 
 					</button>
@@ -72,11 +71,7 @@
 
 					輸入帳號查詢: <input type="text" name="Username" id="M_Username" value=""
 						size="20" placeholder="不輸入搜尋全部" />
-					<!-- 					             <input type="submit" value="開始查詢" onclick="getQueryData('Select','resultIndex');"/> -->
-
-
-
-
+		
 					<input type="text" name="pageNo" id="pageNo" value="1" />
 
 
@@ -86,11 +81,6 @@
 					<div id="sqlResult"></div>
 
 				</Form>
-
-
-				<ul class="nav navbar-nav navbar-right">
-
-				</ul>
 			</div>
 		</nav>
 	</section>
@@ -109,7 +99,6 @@
 		</button>
 	</div>
 
-	<%-- 	<section class="container-fuild" id="resp"><center><h2>歡迎使用本系統</h2></center></section> --%>
 	<section class="container-fuild" id="resultIndex"></section>
 	<section class="container-fuild" id="insertIndex"></section>
 
@@ -126,8 +115,8 @@
 	<script src="../asset/js/bootstrap.min.js"></script>
 	
 	<script src="../js/member/insert.js?v0001"></script>
-	<script src="../js/member/delete.js?v014"></script>
-	<script src="../js/member/select.js?v023"></script>
+	<script src="../js/member/delete.js?v08"></script>
+	<script src="../js/member/select.js?v04"></script>
 	<script src="../js/member/update.js?v014"></script>
 	<script src="../js/member/member.js?v014"></script>
 
