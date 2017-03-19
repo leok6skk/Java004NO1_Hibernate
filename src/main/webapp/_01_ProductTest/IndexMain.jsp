@@ -27,6 +27,5 @@
 <script src="${pageContext.request.contextPath}/jQuery/jquery-3.1.1.js" type="text/JavaScript"></script>
 <script src="${pageContext.request.contextPath}/jQuery/jqueryform.js" type="text/JavaScript"></script>
 <script src="${pageContext.request.contextPath}/js/product_new2.js" type="text/JavaScript"></script>
-<script src="${pageContext.request.contextPath}/js/member/member.js?v01"></script>
 
 </html>

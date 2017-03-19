@@ -21,14 +21,14 @@
 
 	<header class="container-fuild">
 
-		<div class="row">
+<!-- 		<div class="row"> -->
 
-			<h4 class="text-center" id="indexheader">
-				<strong>資料管理系統</strong>
-				<a href="../_00_Login/logout.jsp" style="position: absolute;right:10em;color:white;">登出</a>
-			</h4>
+<!-- 			<h4 class="text-center" id="indexheader"> -->
+<!-- 				<strong>資料管理系統</strong> -->
+<!-- 				<a href="../_00_Login/logout.jsp" style="position: absolute;right:10em;color:white;">登出</a> -->
+<!-- 			</h4> -->
 			
-		</div>
+<!-- 		</div> -->
 <!-- 				<div> -->
 <%-- 					<jsp:include page='../_00_Util/IndexMain.jsp' /> --%>
 <!-- 				</div> -->

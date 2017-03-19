@@ -16,13 +16,12 @@
 					<li><a href="#" data-toggle="dropdown">基本資料管理 <b
 							class="caret"></b></a>
 						<ul>
-							<li ><a href="#tab-product" onclick="getAction('IndexProduct2.jsp','loadPageDiv');getQueryData('SelectProduct.do');">產品資訊</a>
-								<ul>
-									<li><a href="#">子功能1</a></li>
-								</ul>
-							</li>
-<!-- 							<li><a href="#tab-Taste" onclick="getAction('../_02_Taste/IndexTaste.jsp','loadPageDiv');getQueryData('../_02_Taste/SelectTaste.do');">口味資訊</a> -->
-							<li><a href="../_14_Member/IndexMember.jsp" onclick="">會員系統</a>
+							<li ><a href="#tab-product" onclick="getAction('../_01_ProductTest/IndexProduct2.jsp','loadPageDiv');getQueryData('SelectProduct.do');">產品資訊</a>
+<!-- 								<ul> -->
+<!-- 									<li><a href="#">子功能1</a></li> -->
+<!-- 								</ul> -->
+							</li>							
+							<li><a href="#tab-member" onclick="getAction('../_14_Member/IndexMember.jsp','loadPageDiv');">會員系統</a>
 						</ul>
 					<li>
 				</ul>
