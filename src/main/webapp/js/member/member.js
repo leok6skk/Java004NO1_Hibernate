@@ -1,110 +1,78 @@
-function indexdofirst(){
+$(document).ready(function(){
 
-//	getQueryDataLimit('LimitSelect','resultIndex','M_ID');
-//	getQueryData('M_Username','Select','resultIndex','result','M_Username');
+	//總頁數
+	totalPages('TotalPages',"#totalPages");
 	
-	document.getElementById('buttonremark').onclick = function(){
+	//上一頁
+	$('#pageBack').click(function(){
+		pageBack();
+		
+		//自動搜尋
+		buttonSelect('Select','#resultIndex','#formSelect');
+	});	
+	
+	//下一頁
+	$('#pageNext').click(function(){
+		pageNext();
+		
+		//自動搜尋
+		buttonSelect('Select','#resultIndex','#formSelect');
+	});	
+	
+	//自動搜尋
+	buttonSelect('Select','#resultIndex','#formSelect');
+	
+	//搜尋提交
+	$('#formSelect').click(function(){
+		buttonSelect('Select','#resultIndex','#formSelect');
+	});	
+	
+	//新增畫面
+	$('#buttoninsert').click(function(){
+		buttonInsert('InsertMember.jsp','#insertIndex');
+	});
+	
+	//新增提交
+	$('#submitinsert').click(function(){
+		submitInsert('Insert','#resultInsert','#formInsert');
+		
+		//自動搜尋
+		buttonSelect('Select','#resultIndex','#formSelect');
+	});
+	
+	
+	//刪除提交
+	$("#buttondelete").click(function(){
+		buttonDelete("Delete");   	
+    });
+	
+	//說明畫面
+	$('#buttonremark').click(function(){
 		alert("remark");
-	}
+	});
 	
-	totalPages('TotalPages');
-//	document.getElementById('buttonsearch').onclick = getQueryData('M_Username','Select','resultIndex','result','M_Username');
-
-//	document.getElementById('buttondelete').onclick = setDeleteData('Delete','Username','resultIndex','LimitSelect','resultLimit');
-
-
-}
-
-
-//-------------------------------------------------------
-
-function selectMenu(e) {
-	window.open(e.options[e.selectedIndex].value);
-}
-
-////-------------------------------------------------------
-
-function ajaxButtonTag(sendJsp, tag) {
-
-	var tagId = document.getElementById(tag);
-	// 步驟一: 新建XMLHttpRequest物件
-	var xhr = new XMLHttpRequest();
-	// 步驟二: 經由AJAX提出HTTP請求
-	if (xhr != null) {
-		xhr.onreadystatechange = function() {
-			// 步驟三: 處理伺服器送回的回應資料
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				tagId.innerHTML =  xhr.responseText;
-			}
-		}
-		xhr.open('POST', sendJsp, true);
-		xhr.send();
-	} else {
-		tagId.innerHTML = "<h1>您的瀏覽器不支援Ajax</h1>";
-	}
-}
-
-
-
-////-------------------------------------------------------
-
-
-
-
-function setQueryString(formId) {
-	queryString = "";
-	//alert(formId);
-	var frm = document.forms.namedItem(formId);
-	var numberElements = frm.elements.length;
-	for (var i = 0; i < numberElements; i++) {
-		if (i < numberElements - 1) {
-			            	//alert(frm.elements[i].name);
-			            	//alert(frm.elements[i].value);
-			queryString += frm.elements[i].name + "="
-					+ encodeURIComponent(frm.elements[i].value) + "&";
-		} else {
-			queryString += frm.elements[i].name + "="
-					+ encodeURIComponent(frm.elements[i].value);
-		}
-
-	}
-	return queryString;
-}
-
-
-
-function totalPages(servelet){
 	
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", servelet, true);//send要傳參數一定要用POST
-	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	
+});
 
-	xhr.send();
-
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-
-			var validation_messages = xhr.responseText;//由servelet傳過來JSON格式的資料		
-			
-			document.getElementById("totalPages").value = validation_messages;
-		}
-	}
+//總頁數 function
+function totalPages(servelet,resultId){
+	$.ajax({url: servelet, success: function(result){
+        $(resultId).val(result);
+    }});	
 }
 
-
+//上一頁 function
 function pageBack(){
 	
-	var pageNoId = document.getElementById("pageNo");	
-	var num =  Number(pageNoId.value);
-	
-	
+	var num =  Number($('#pageNo').val());
+
 	if(num >=2 ){
-		pageNoId.value = num-1;
+		$('#pageNo').val(num-1);
 	}
-	
-	getQueryData('M_Username','Select','resultIndex','result','M_Username');
 }
 
+//下一頁 function
 function pageNext(){
 	
 	var pageNoId = document.getElementById("pageNo");
@@ -115,13 +83,100 @@ function pageNext(){
 	if(num < total && total>=2){
 		pageNoId.value = num+1;
 	}
+
+}
+
+//查詢提交 function
+function buttonSelect(servelet, resultId, formId) {
+	$.ajax({url: servelet,dataType: 'json',resetForm: true,data: $(formId).serialize(),
+        success:   function(result){
+  
+        	selectResponse(result, resultId);       	
+        }
+	});
+}
+
+//查詢成功回傳
+function selectResponse(result, resultId) {
+
+	var content="";
+
+	content += "<form id='queryData'>";
+	content += "<table>";
 	
-	getQueryData('M_Username','Select','resultIndex','result','M_Username');
+	//每一筆資料
+	$.each(result, function(key, value){
+		
+		//欄位名稱
+		if(key==0){
+			content += "<tr><td>#</td>";
+			
+			$.each(value, function(key, value){
+		    	content += "<td>"+key+"</td>";
+		    });
+			content += "</tr>";
+		}
+		
+		//每一筆資料
+		content += "<tr>";
+		content += "<td><input type='radio'></td>";
+		
+	    $.each(value, function(key, value){
+	    		content += "<td>"+value+"</td>";    	
+	    });
+	    content += "</tr>";
+	});
+	content += "</table>";
+	content += "</form>";
+	
+	$(resultId).html(content);
+	//$('#resultIndex')
+	
 }
 
 
-//----------------------------------------------------
+//新增畫面 function
+function buttonInsert(servelet, resultId) {
+	$.ajax({url: servelet, success: function(result){
+        $(resultId).html(result);
+    }});
+}
+
+//新增提交 function
+function submitInsert(servelet, resultId, formId) {
+	$.ajax({url: servelet,dataType: 'json',resetForm: true,data: $(formId).serialize(),
+        success:   function(result){
+        	
+        	alert(result);        	
+        }
+	});
+}
 
 
+//刪除提交 function
+function buttonDelete(servelet){
+	
+	var selected = $('input:checked').parent().next().text();
 
-window.addEventListener('load',indexdofirst,false);
+	if (selected == null || selected.trim().length == 0) {
+
+		alert("請先選取要刪除的資料");  		
+		return false;
+	}
+	
+    $.ajax({
+    	url: 		servelet,
+    	data:		"Username="+selected,
+    	dataType: 	'json',
+    	async: 		false,
+    	beforeSend: function(xhr, opts){
+            if(!confirm("確定要刪除" + selected + "嗎?"))
+            {
+                xhr.abort();
+            }
+        },
+    	success: 	function(result){
+    		alert(result);
+    	}
+    });
+}

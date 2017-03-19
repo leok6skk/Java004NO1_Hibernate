@@ -47,7 +47,7 @@ public class TotalPages extends HttpServlet {
 				e.printStackTrace();
 			}
 			toJson = new Gson().toJson(TotalPages);
-			System.out.println(toJson);
+			System.out.println("共"+toJson+"頁");
 			out.println(toJson);
 		}
 

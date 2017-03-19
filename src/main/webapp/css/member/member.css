@@ -127,7 +127,6 @@ table {
 
 #resultIndex tr{
 	background-color:white;
-	width: 15.625em;
 }
 #resultIndex tr:nth-child(odd){
 	background-color:#ffffa8;
@@ -136,12 +135,22 @@ table {
 }
 #resultIndex tr:nth-child(1){
 	background-color:#9dceff;
-/* 	color:#191919;  */
+
 }
+#resultIndex td{
+	width: 10em;
+	text-align:center;
+}
+#resultIndex td:nth-child(1){
+	width: 3em;
+}
+
+
+/*---------------------------------------------------*/
 
 #insertIndex tr{
 	background-color:white;
-	width: 15.625em;
+	width: 15em;
 }
 #insertIndex tr:nth-child(odd){
 	background-color:#ffffa8;
@@ -154,10 +163,6 @@ table {
 }
 
 
-
-td{
-	width: 15.625em;
-}
 /* tr:nth-child(even){ */
 /* 	background-color::#a4cfdf; */
 /* } */

@@ -68,7 +68,7 @@
 					</button>
 				</TD>
 				<TD colspan="1">
-					<Button id="submitinsert" onclick="setInsertData('Username','Insert','resultInsert'); getQueryData('M_Username','Select','resultIndex','result','M_Username');">
+					<Button id="submitinsert">
 						<font color="#018bbd">
 						確認新增
 						</font>

@@ -1,7 +1,7 @@
 package _00_Util;
 
 public class SystemConstant {
-	public static final int    RECORDS_PER_PAGE = 13;
+	public static final int    RECORDS_PER_PAGE = 3;
     public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; 
     public static final String HOST = "1.34.195.4";
     public static final String DB = "Java004NO1";

@@ -11,7 +11,7 @@
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
 <link rel="stylesheet" href="../asset/css/bootstrap.min.css">
 <link rel="stylesheet" href="../asset/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../css/member/member2.css?110">
+<link rel="stylesheet" href="../css/member/member.css?003">
 
 
 
@@ -45,19 +45,17 @@
 						<br>說明
 
 					</button>
-					<button
-						onclick="IndexMember.jsp'">
+					<button onclick="IndexMember.jsp'">
 
 						<br>首頁
 
 					</button>
 
-					<button onclick="ajaxButtonTag('InsertMember.jsp','insertIndex');"
-						id='buttoninsert'>
+					<button id='buttoninsert'>
 						<img src="../image/insert.png"><br>新增
 
 					</button>
-					<button onclick="updateData();" id='buttonupdate'>
+					<button id='buttonupdate'>
 						<img src='../image/update.png'><br>修改
 
 					</button>
@@ -85,7 +83,7 @@
 		</nav>
 	</section>
 	<div id="pageControl">
-		<button id="pageBack" onclick="pageBack();">
+		<button id="pageBack">
 			<img src="../image/back.png" style="width: 2.5em; height: 1.5em;">
 
 		</button>
@@ -93,7 +91,7 @@
 		<input type="text" name="totalPages" id="totalPages" value="0"
 			readonly="readonly" />
 
-		<button id="pageNext" onclick="pageNext();">
+		<button id="pageNext">
 			<img src="../image/next.png" style="width: 2.5em; height: 1.5em;">
 
 		</button>
@@ -114,11 +112,7 @@
 	<script src="../js/jquery.form.js"></script>
 	<script src="../asset/js/bootstrap.min.js"></script>
 	
-	<script src="../js/member/insert.js?v0001"></script>
-	<script src="../js/member/delete.js?v08"></script>
-	<script src="../js/member/select.js?v04"></script>
-	<script src="../js/member/update.js?v014"></script>
-	<script src="../js/member/member.js?v014"></script>
+	<script src="../js/member/member.js?v01"></script>
 
 </body>
 </html>
